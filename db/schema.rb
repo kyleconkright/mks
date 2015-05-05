@@ -11,23 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501221717) do
+ActiveRecord::Schema.define(version: 20150505234539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "addresses", force: :cascade do |t|
-    t.string   "street1"
-    t.string   "street2"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-  end
-
-  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.boolean  "admin"
@@ -42,14 +29,15 @@ ActiveRecord::Schema.define(version: 20150501221717) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "address_id"
     t.integer  "role_id"
+    t.string   "street1"
+    t.string   "street2"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
   end
 
-  add_index "users", ["address_id"], name: "index_users_on_address_id", using: :btree
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
-  add_foreign_key "addresses", "users"
-  add_foreign_key "users", "addresses"
   add_foreign_key "users", "roles"
 end
