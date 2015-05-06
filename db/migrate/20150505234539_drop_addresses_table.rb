@@ -3,4 +3,3 @@ class DropAddressesTable < ActiveRecord::Migration
   	drop_table :addresses
   end
 end
-e
