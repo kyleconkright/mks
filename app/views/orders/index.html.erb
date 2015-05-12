@@ -1,5 +1,6 @@
 <div id="container">
-	<% @orders["colors"].each do |order| %>
-		<p><%= order["name"] %></p>
+	<%= @orders.inspect %>
+	<% @orders.each do |order| %>
+		<p><%= "#{order["status"]} - #{order["total"]}" %></p>
 	<% end %>
 </div>
