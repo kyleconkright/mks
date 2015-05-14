@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  get '/auth/:provider/callback', to: 'sessions#create'
+  
+  root 'orders#new'
 
-  resources :orders
+
+  resources :orders, only: [:create, :index, :new]
+
+  post '/getquote' => 'orders#get_quote'
 
   resources :users, only: [:index, :show, :create, :update, :new]
 
