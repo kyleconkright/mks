@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create, :index, :new]
 
+  post '/getquote' => 'orders#get_quote'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

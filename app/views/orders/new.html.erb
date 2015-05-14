@@ -1,4 +1,21 @@
+<form id="quote_form" data-remote="true">
+	<input name="size" type="text" placeholder="Size">
+	<input name="qty" type="number" placeholder="1">
+	<button type="submit" id="get_quote" >Get Quote</button>
+</form>
 
-<%= form_for @order do |f| %>
-	<%= f.submit "get quote" %>
-<% end %>
+
+
+<script>
+	$('#quote_form').on('submit', function(evt){
+		evt.preventDefault();
+
+		var size = $('#quote_form input[name=size]').val();
+		var qty = $('#quote_form input[name=qty]').val();
+
+		$.post("/getquote?" + "size="+size+"&qty="+qty, function(data){
+			console.log(data);
+			alert(data.status)
+		});
+	});
+</script>
