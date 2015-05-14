@@ -1,0 +1,26 @@
+<% @users.each do |user| %>
+<label>Username</label>
+<h1>Oh, hello <%= user.username %>!</h1>
+<%= image_tag "#{user.profile_image}" %>
+<label>Email</label>
+<%= user.email %>
+<label>Phone</label>
+<%= user.phone_number%>
+<label>Street Address</label>
+<%= user.street1 %>
+<label>Suite/Apt Number</label>
+<%= user.street2 %>
+<label>City</label>
+<%= user.city %>
+<label>State</label>
+<%= user.state %>
+<label>Zip</label>
+<%= user.zip %>
+<label>Current Orders</label>
+orders
+<label>Past Ordes</label>
+past orders
+
+<% end %>
+
+
