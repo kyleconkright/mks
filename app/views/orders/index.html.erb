@@ -1,6 +1,9 @@
 <div id="container">
-	<%= @orders.inspect %>
 	<% @orders.each do |order| %>
 		<p><%= "#{order["status"]} - #{order["total"]}" %></p>
 	<% end %>
+	
+	<%= @response.inspect %>
+
+	<%= @designId %>
 </div>

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   
-  root 'welcome#index'
+  root 'orders#new'
 
-  resources :orders
+  resources :orders, only: [:create, :index, :new]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
