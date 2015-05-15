@@ -2,10 +2,13 @@ Rails.application.routes.draw do
 
   root 'orders#new'
 
-  resources :orders
+  get '/auth/:provider/callback', to: 'sessions#create'
+  
+  resources :orders, only: [:create, :index, :new]
 
   resources :users, only: [:index, :show, :create, :update, :new]
 
+  post '/getquote' => 'orders#get_quote'
 
 # ======= Static Pages =======
   get 'welcome/about'

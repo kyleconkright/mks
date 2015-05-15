@@ -4,7 +4,7 @@
 	<button type="submit" id="get_quote" >Get Quote</button>
 </form>
 
-
+<div id="quote" style="display: none;"></div>
 
 <script>
 	$('#quote_form').on('submit', function(evt){
@@ -15,7 +15,10 @@
 
 		$.post("/getquote?" + "size="+size+"&qty="+qty, function(data){
 			console.log(data);
-			alert(data.status)
+			$('<div>'+ data.total +'</div>')
+			.appendTo('#quote')
+			
+			$('#quote').fadeIn();
 		});
 	});
 </script>
