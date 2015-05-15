@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 	validates :name, presence: true
 	# validates :email, presence: true, unless: :twitter_login?
 	attr_reader :password
-	# has_secure_password
+	has_secure_password
 	# validates :password, presence: true, unless: :twitter_login?
 
 	def twitter_login?

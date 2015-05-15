@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 
 # ======= Sessions ROUTES ======= 
   get '/login' => 'sessions#new'
-  get '/auth/twitter/', to: 'sessions#create', as: :twitter
-  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/twitter/', to: 'sessions#create_twitter_session', as: :twitter
+  get '/auth/:provider/callback', to: 'sessions#create_twitter_session'
   post '/login' => 'sessions#create' 
   delete '/logout' => 'sessions#destroy'
 

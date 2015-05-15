@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+		<h1>Update Order Notes</h1>
+
+		<% @order.each do |order| %>
+
+		<div class='form-group'>
+			<%= f.label :notes %>
+			<%= f.text_field :name, class: "form_control" %>
+		</div>
+
+		<%= f.submit "Submit", class: "btn btn-primary" %>
+
+		<% end %>
+	</div>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
