@@ -3,11 +3,11 @@ class User < ActiveRecord::Base
 	belongs_to :address
 	belongs_to :role
 	has_many :orders
-	validates :username, presence: true
-	validates :email, presence: true, unless: :twitter_login?
-	# attr_reader :password
-	has_secure_password
-	validates :password, presence: true, unless: :twitter_login?
+	validates :name, presence: true
+	# validates :email, presence: true, unless: :twitter_login?
+	attr_reader :password
+	# has_secure_password
+	# validates :password, presence: true, unless: :twitter_login?
 
 	def twitter_login?
 		self.uid ? true : false

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+
     	<h1>SIGNUP</h1>
 
 			<%= form_for @user, url: { action: "create" } do |f| %>
@@ -19,8 +20,15 @@
 				<%= f.label :password %> 
 				<%= f.password_field :password, class: "form-control" %>
 			</div>
+			<div>
 				<%= f.submit "Sign up!", class: "btn btn-primary" %>
 			</div>
-				<% end %>
+
+			<div>
+			<%= link_to 'Twitter Login', twitter_path %>
+			</div>
+			
+			<% end %>
 	</div>
+  </div>
 </div>

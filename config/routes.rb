@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :orders
 
   resources :users, only: [:index, :show, :create, :update, :new]
-
+  get '/signup' => "users#new"
 
 # ======= Static Pages =======
   get 'welcome/about'
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
 # ======= Sessions ROUTES ======= 
   get '/login' => 'sessions#new'
+  get '/auth/twitter/', to: 'sessions#create', as: :twitter
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/login' => 'sessions#create' 
   delete '/logout' => 'sessions#destroy'

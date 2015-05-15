@@ -12,9 +12,8 @@ end
 def destroy 
 # delete that key/value pair in our sessions hash 
   session.delete(:user_id) 
-  redirect_to root_path
+  redirect_to login_path
 end 
-
 
 protected
   def auth_hash
