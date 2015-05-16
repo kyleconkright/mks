@@ -1,0 +1,66 @@
+<div id="order-container">
+
+	<div id="user-info">
+
+		<header><h1>Tweet<span>Shirt</span>.io</h1></header>
+
+		<div id="form-container">
+
+			<!--LOGIN FORM-->
+			<form id="login_form">
+				<div class="twitter-login">
+					<h1>Create an Account</h1>
+					<span>Or</span>
+					<a href="#"><i class="fa fa-twitter"></i> Sign up with Twitter</a>
+				</div>
+				
+					<input name="username" type="text" placeholder="Username">
+					<input name="email" type="text" placeholder="Email Address">
+					<input name="password" type="text" placeholder="Create Password">
+					<input name="confirm_password" type="text" placeholder="Confirm Password">
+				
+				<button type="submit">Create Account</button>
+				<div class="extra">
+					<p>Have an account?</p><a href="#">Log In</a>
+				</div>
+			</form>
+
+			<!--ADDRESS FORM-->
+			<form id="address_form" data-remote="true" style="display: none;">
+				<input name="street_1" type="text" placeholder="Street Address 1">
+				<input name="street_2" type="text" placeholder="Street Address 2">
+				<input name="city" type="text" placeholder="City">
+				<input name="state" type="text" placeholder="State">
+				<input name="zip" type="text" placeholder="Zip">
+				<button type="submit">Submit Payment Info</button>
+			</form>
+				
+			<!--SIZE QTY FORM-->	
+			<form id="quote_form" data-remote="true" style="display: none;">
+				<input name="size" type="text" placeholder="Size">
+				<input name="qty" type="number" placeholder="1">
+				<button type="submit">Get Quote</button>
+			</form>
+
+			<!--CONFIRM PURCHASE FORM-->
+			<form id="purchase_form" data-remote="true" style="display: none;">
+				<p class="total"></p>
+				<button type="submit">Confirm Purchase</button>
+			</form>
+
+			<div id="purchase_confirmed" style="display: none;">
+				<p>Success</p>
+			</div>
+
+
+		</div><!-- form-containers -->
+	</div><!-- user-info -->
+
+	<div id="order-shirt">
+		<img src="/assets/shirt.png" />
+	</div><!-- order-shirt -->
+</div>
+
+
+
+<div id="quote" style="display: none;"></div>

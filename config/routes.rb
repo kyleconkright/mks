@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  root 'orders#new'
 
-  resources :orders
+  get '/auth/:provider/callback', to: 'sessions#create'
+  
+  resources :orders, only: [:create, :index, :new]
 
   resources :users, only: [:index, :show, :create, :update, :new]
+
   get '/signup' => "users#new"
+
+
+  post '/getquote' => 'orders#get_quote'
+  post '/confirm' => 'orders#create_remote_order'
+
 
 # ======= Static Pages =======
   get 'welcome/about'
