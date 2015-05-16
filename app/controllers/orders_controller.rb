@@ -105,14 +105,17 @@ class OrdersController < ApplicationController
 	end
 
 
-	def create_remote_order(order_token)
+	def create_remote_order
+		order_token = params[:order_token]
 		@response = HTTParty.post(
 			"https://api.scalablepress.com/v2/order/",
 			:headers => {'Content-Type' => 'application/json'},
 			:basic_auth => auth,
 			:body => {"orderToken":order_token}.to_json
 		)
-		return @response
+		@response
+		render :json => @response
+
 	end
 
 

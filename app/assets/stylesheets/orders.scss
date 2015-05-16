@@ -1,0 +1,51 @@
+@import '_variables.scss';
+
+div#order-container {
+	min-height: 100%;
+	display: flex;
+	> div {
+		flex: 1;
+	}
+	div#user-info {
+		flex: .75;
+		background: linear-gradient(to bottom right,#2989d8 0, 50%,#7F96A8 100%);
+		display: flex;
+		flex-direction: column;
+		header {
+			background: rgba(205, 5, 100, 0.25);
+			padding: $margin;
+			font-size: 2.25em;
+			font-weight: 700;
+			opacity: .85;
+			h1 {
+				color: #f6f6f6;
+				span {
+					color: #BFD1E0;
+				}
+			}
+		}
+		#form-container {
+			flex: 1;
+			padding: $margin;
+			display: flex;
+			// align-items: center;
+			form {
+				
+				input {
+					border-bottom: 1px dashed $blue/1.2;
+					padding: $margin/2 0;
+					display: block;
+				}
+			}
+		}
+		
+	}
+	div#order-shirt {
+		align-self: center;
+		img {
+			max-width: 80%;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+}

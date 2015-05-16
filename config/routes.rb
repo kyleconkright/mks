@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :create, :update, :new]
 
   post '/getquote' => 'orders#get_quote'
+  post '/confirm' => 'orders#create_remote_order'
 
 # ======= Static Pages =======
   get 'welcome/about'

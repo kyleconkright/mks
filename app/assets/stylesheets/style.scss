@@ -1,3 +1,29 @@
+@import '_variables.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+}
+
+html, body {
+	height: 100%;
+}
+
 body {
 	background: #f6f6f6;
+	color: #f6f6f6;
+	font-family: Montserrat, helvetica neue;
+	font-weight: 400;
+	font-size: 105%;
+}
+
+::-webkit-input-placeholder {
+	color: $blue/1.2;
 }
